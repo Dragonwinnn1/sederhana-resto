@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Makanan</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function showSection(sectionId) {
+            const sections = document.querySelectorAll('.content-section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+
+        function order(itemName, itemPrice, quantity) {
+            const totalPrice = itemPrice * quantity;
+            const message = `Saya ingin memesan ${quantity} ${itemName} dengan total harga Rp ${totalPrice}.`;
+            const phoneNumber = '6287870080730'; // Ganti dengan nomor WhatsApp Anda
+            const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            
+            // Alihkan ke WhatsApp
+            window.open(whatsappUrl, '_blank');
+        }
+    </script>
+</head>
+<body>
+    <header>
+        <h1>SELAMAT DATANG DI RESTORAN SEDERHANA </h1>
+        <nav>
+            <button onclick="showSection('home')">Beranda</button>
+            <button onclick="showSection('about')">Tentang Kami</button>
+            <button onclick="showSection('menu')">Menu</button>
+            <button onclick="showSection('contact')">Kontak</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" class="content-section">
+            <h2>Beranda </h2>
+            <p>Selamat datang di restoran kami! Nikmati berbagai hidangan lezat yang kami tawarkan.</p>
+            
+            <h3>Menu Spesial Kami</h3>
+            <div class="menu-items">
+                <div class="menu-item">
+                    <img src="https://github.com/Dragonwinnn1/sederhana-resto/blob/main/PizzaMargherita.jpg?raw=true" alt="Pizza Margherita">
+                    <h4>🍕 Pizza Margherita</h4>
+                    <p>Pizza klasik dengan saus tomat, keju mozzarella, dan basil segar.</p>
+                    <p>Harga: Rp 50.000</p>
+                    <input type="number" id="pizza-qty" value="1" min="1" style="width: 50px;">
+                    <button onclick="order('Pizza Margherita', 50000, document.getElementById('pizza-qty').value)">Pesan Sekarang</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://github.com/Dragonwinnn1/sederhana-resto/blob/main/BurgerSpesial.jpg?raw=true" alt="Burger Spesial">
+                    <h4>🍔 Burger Spesial</h4>
+                    <p>Burger daging sapi dengan keju, selada, tomat, dan saus spesial.</p>
+                    <p>Harga: Rp 45.000</p>
+                    <input type="number" id="burger-qty" value="1" min="1" style="width: 50px;">
+                    <button onclick="order('Burger Spesial', 45000, document.getElementById('burger-qty').value)">Pesan Sekarang</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://github.com/Dragonwinnn1/sederhana-resto/blob/main/SpaghettiBolognese.jpg?raw=true" alt="Spaghetti Bolognese">
+                    <h4>🍝 Spaghetti Bolognese</h4>
+                    <p>Pasta spaghetti dengan saus daging bolognese yang kaya rasa.</p>
+                    <p>Harga: Rp 55.000</p>
+                    <input type="number" id="spaghetti-qty" value="1" min="1" style="width: 50px;">
+                    <button onclick="order('Spaghetti Bolognese', 55000, document.getElementById('spaghetti-qty').value)">Pesan Sekarang</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://github.com/Dragonwinnn1/sederhana-resto/blob/main/SaladCaesar.jpg?raw=true" alt="Salad Caesar">
+                    <h4>🥗 Salad Caesar</h4>
+                    <p>Salad segar dengan romaine, crouton, dan saus Caesar yang creamy.</p>
+                    <p>Harga: Rp 30.000</p>
+                    <input type="number" id="salad-qty" value="1" min="1" style="width: 50px;">
+                    <button onclick="order('Salad Caesar', 30000, document.getElementById('salad-qty').value)">Pesan Sekarang</button>
+                </div>
+                <div class="menu-item">
+                    <img src="https://github.com/Dragonwinnn1/sederhana-resto/blob/main/KueCoklat.jpg?raw=true" alt="Kue Coklat">
+                    <h4>🍰 Kue Coklat</h4>
+                    <p>Kue coklat lembut dengan lapisan krim coklat yang menggoda.</p>
+                    <p>Harga: Rp 25.000</p>
+                    <input type="number" id="cake-qty" value="1" min="1" style="width: 50px;">
+                    <button onclick="order('Kue Coklat', 25000, document.getElementById('cake-qty').value)">Pesan Sekarang</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="content-section" style="display: none;">
+            <h2>Tentang Kami</h2>
+            <p>Kami adalah restoran yang berkomitmen untuk memberikan pengalaman kuliner terbaik bagi setiap tamu. Dengan bahan-bahan segar dan resep yang telah teruji, kami menciptakan hidangan yang tidak hanya lezat tetapi juga menggugah selera.</p>
+            <p>Tim kami terdiri dari koki berbakat yang memiliki passion dalam memasak dan menciptakan hidangan yang memukau. Kami percaya bahwa setiap hidangan adalah karya seni yang layak untuk dipuji.</p>
+        </section>
+
+        <section id="contact" class="content-section" style="display: none;">
+            <h2>Kontak</h2>
+            <p>Untuk pertanyaan atau reservasi, silakan hubungi kami di:</p>
+            <p>Email: info@restoran.com</p>
+            <p>Telepon: 021-12345678</p>
+        </section>
+    </main>
+</

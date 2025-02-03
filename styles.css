@@ -1,0 +1,96 @@
+/* Mengatur font untuk seluruh halaman */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://github.com/Dragonwinnn1/sederhana-resto/blob/main/background.jpg.jpg?raw=true'); /* Pastikan path gambar benar */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+}
+
+/* Mengatur tata letak item menu */
+.menu-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+/* Gaya untuk setiap item menu */
+.menu-item {
+    background-color: rgb(168, 0, 0);
+    border: 1px solid #e8ff15;
+    border-radius: 8px;
+    margin: 15px;
+    padding: 15px;
+    width: 220px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgb(255, 40, 40);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+/* Efek saat hover pada item menu */
+.menu-item:hover {
+    background-color: rgb(200, 0, 0);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(255, 40, 40, 0.5);
+}
+
+/* Gaya untuk gambar dalam item menu */
+.menu-item img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+/* Gaya untuk judul item menu */
+.menu-item h4 {
+    margin: 10px 0 5px;
+    font-size: 18px;
+    color: #1afa25;
+}
+
+/* Gaya untuk deskripsi item menu */
+.menu-item p {
+    font-size: 14px;
+    color: #fbff00;
+    margin: 5px 0;
+}
+
+/* Gaya untuk harga item menu */
+.price {
+    font-weight: bold;
+    color: #fff;
+    margin: 10px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+/* Gaya untuk input jumlah */
+.quantity-input {
+    width: 50px;
+    margin: 10px 0;
+}
+
+/* Gaya untuk tombol */
+button {
+    background-color: #dcff15;
+    color: #000; /* Warna hitam agar lebih terbaca */
+    border: none;
+    border-radius: 5px;
+    padding: 10px 15px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+/* Efek saat hover pada tombol */
+button:hover {
+    background-color: #d4d400;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+    .menu-item {
+        width: 90%;
+    }
+}
